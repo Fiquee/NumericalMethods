@@ -13,7 +13,7 @@ def y_function_b(x):
     return math.sin(x)
 
 def y_function_c(x):
-    return (math.tan(x+1))/(math.sin(x**2) + 2)
+    return (math.tan(x)+1)/(math.sin(x**2) + 2)
 
 
 def lagrange(n,x,func):
@@ -33,34 +33,43 @@ def lagrange(n,x,func):
     return pn
 
 n = [2,4,6,8,10,12,14,16]
-x = y_value(100) #comment this if you want to run all for y0 - y100
-
+x = y_value(2) #comment this if you want to run all for y0 - y100
+max_err = 0
 
 # to run all at once from 0-100 yi
 
-# for j in range(100):
-#     x = y_value(j)
-#     print(f'Value for p{n[0]} with value x of {x} is = {lagrange(n[0],x,y_function_a)}')
-#     # print(f'Value for p{n[i]} with value x of {x} is = {lagrange(n[i],x,y_function_b)}')
-#     # print(f'Value for p{n[i]} with value x of {x} is = {lagrange(n[i],x,y_function_c)}')
+for i in range(len(n)):
+
+    for j in range(101):
+        print(f'this is for i = {j}')
+        x = y_value(j)
+        ans = lagrange(n[i],x,y_function_c)
+        error = abs(y_function_a(x) - ans)
+        print(f'Value for p{n[i]} with value x of {x} is = {ans} and the error with f({x}) is : {y_function_c(x)} - {ans} = {error}')
+        if(error > max_err):
+            max_err = error
+    # print(f'Value for p{n[i]} with value x of {x} is = {lagrange(n[i],x,y_function_b)}')
+    # print(f'Value for p{n[i]} with value x of {x} is = {lagrange(n[i],x,y_function_c)}')
+
+print(f'max error is : {max_err}')
 
 
 
 ## here to do value testing using x value above
-
+# n = 2
 '''Question 6a'''
-ans = lagrange(2,x,y_function_a)
-print(f'Value for p{2} with value x of {x} is = {ans}')
-print(f'f({x}) : {y_function_a(x)}   p{2}({x}) : {ans} , hence the error is : {abs(y_function_a(x) - ans)}\n')
+# ans = lagrange(n,x,y_function_a)
+# print(f'Value for p{n} with value x of {x} is = {ans}')
+# print(f'f({x}) : {y_function_a(x)}   p{n}({x}) : {ans} , hence the error is : {abs(y_function_a(x) - ans)}\n')
 
 
 '''Question 6b'''
-# ans = lagrange(2,x,y_function_b)
-# print(f'Value for p{2} with value x of {x} is = {ans}')
-# print(f'f({x}) : {y_function_b(x)}   p{2}({x}) : {ans} , hence the error is : {abs(y_function_b(x) - ans)}\n')
+# ans = lagrange(n,x,y_function_b)
+# print(f'Value for p{n} with value x of {x} is = {ans}')
+# print(f'f({x}) : {y_function_b(x)}   p{n}({x}) : {ans} , hence the error is : {abs(y_function_b(x) - ans)}\n')
 
 
 '''Question 6c'''
-# ans = lagrange(2,x,y_function_c)
-# print(f'Value for p{2} with value x of {x} is = {ans}')
-# print(f'f({x}) : {y_function_c(x)}   p{2}({x}) : {ans} , hence the error is : {abs(y_function_c(x) - ans)}')
+# ans = lagrange(n,x,y_function_c)
+# print(f'Value for p{n} with value x of {x} is = {ans}')
+# print(f'f({x}) : {y_function_c(x)}   p{n}({x}) : {ans} , hence the error is : {abs(y_function_c(x) - ans)}')
