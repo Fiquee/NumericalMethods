@@ -26,6 +26,7 @@ def lagrange(n,x,func):
         for j in range(n+1): # lagrange iteration multiplication
             if(j != i ): 
                 temp = temp * ( (x - x_value(n,j)) / (x_value(n,i) - (x_value(n,j))) ) 
+        print(temp)
 
         # print(f'this is function(x{i}) : {func(xi)}')
         pn = pn + (temp * func(xi))
@@ -39,6 +40,7 @@ list_err = []
 # to run all at once from 0-100 yi
 
 for i in range(len(n)):
+    max_err = 0
     print(f'calculating p{n[i]}...')
 
     for j in range(101):
@@ -51,10 +53,11 @@ for i in range(len(n)):
         # print(f'Value for p{n[7]} with value x of {x} is = {ans} and the error with f({x}) is : {y_function_a(x)} - {ans} = {error}')
         if(error > max_err):
             max_err = error
-    # print(f'Value for p{n[i]} with value x of {x} is = {lagrange(n[i],x,y_function_b)}')
-    # print(f'Value for p{n[i]} with value x of {x} is = {lagrange(n[i],x,y_function_c)}')
+    print(f'The max error for p{n[i]} is : {max_err}')
+#     # print(f'Value for p{n[i]} with value x of {x} is = {lagrange(n[i],x,y_function_b)}')
+#     # print(f'Value for p{n[i]} with value x of {x} is = {lagrange(n[i],x,y_function_c)}')
 
-print(f'max error is : {max_err}')
+# print(f'max error is : {max_err}')
 # print(f'list : {list_err}')
 
 
@@ -62,10 +65,11 @@ print(f'max error is : {max_err}')
 ## here to do value testing using x value above
 
 
-# n = 2
+# n = 16
 # x = y_value(2)
+# x = 2
 '''Question 6a'''
-# ans = lagrange(n,x,y_function_a)
+# ans = lagrange(16,x,y_function_a)
 # print(f'Value for p{n} with value x of {x} is = {ans}')
 # print(f'f({x}) : {y_function_a(x)}   p{n}({x}) : {ans} , hence the error is : {abs(y_function_a(x) - ans)}\n')
 

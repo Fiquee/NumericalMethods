@@ -6,6 +6,7 @@ def fx_q2(x):
 
 
 
+
 def bisection(fx,a,b,iteration,stoppingcondition):
 
     # proceed to this condition when has stopping condition such as interval width 
@@ -53,4 +54,3 @@ def bisection(fx,a,b,iteration,stoppingcondition):
 
 # question 2
 # print(f"The root is = {bisection(fx_q2,1,2,None,stoppingcondition=0.01)}")
-    
