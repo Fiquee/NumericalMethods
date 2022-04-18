@@ -26,7 +26,7 @@ def lagrange(n,x,func):
         for j in range(n+1): # lagrange iteration multiplication
             if(j != i ): 
                 temp = temp * ( (x - x_value(n,j)) / (x_value(n,i) - (x_value(n,j))) ) 
-        print(temp)
+        # print(temp)
 
         # print(f'this is function(x{i}) : {func(xi)}')
         pn = pn + (temp * func(xi))
@@ -44,11 +44,11 @@ for i in range(len(n)):
     print(f'calculating p{n[i]}...')
 
     for j in range(101):
-        print(f'this is for i = {j}')
+        # print(f'this is for i = {j}')
         x = y_value(j)
-        ans = lagrange(n[i],x,y_function_a)
-        error = abs(y_function_a(x) - ans)
-        print(f'f({x}) = {y_function_a(x)}   p({x}) = {ans}      error = {error}\n')
+        ans = lagrange(n[i],x,y_function_c)
+        error = abs(y_function_c(x) - ans)
+        print(f'f({x}) = {y_function_c(x)}   p({x}) = {ans}      error = {error}\n')
         list_err.append(error)
         # print(f'Value for p{n[7]} with value x of {x} is = {ans} and the error with f({x}) is : {y_function_a(x)} - {ans} = {error}')
         if(error > max_err):
