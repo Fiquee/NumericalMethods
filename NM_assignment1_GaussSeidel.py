@@ -42,7 +42,7 @@ def GaussSeidel_v(matrix,b,iteration,x=None): #Using vector style
 
 
 
-A = np.array([[5,-2,-1,4],[-2,4,1,0],[1,2,6,-1],[-1,0,1,6]])
+A = np.array([[5,-2,-1,1],[-2,4,1,0],[1,2,6,-1],[-1,0,1,6]])
 b = np.array([6,0,6,-14])
 
 A,b = make_diagonal_dominant(A,b)
