@@ -1,8 +1,9 @@
 import numpy as np
+import os
 
 
 def make_diagonal_dominant(matrix, b):
-    max_col_index = np.argmax(matrix, axis=0)
+    max_col_index = np.argmax(np.abs(matrix), axis=0)
     matrix = matrix[max_col_index]
     b = b[max_col_index]
 
@@ -34,7 +35,9 @@ A = np.array([ [3,12,0,-1,0,0], [4,0,31,1,0,0] , [2,1,0,0,17,-3], [27,2,0,0,0,1]
 b = np.array([39,117,12,98,14,55])
 
 
+
 A, b = make_diagonal_dominant(A,b)
+print(A)
 # print(A)
 # print("\n",b)
 

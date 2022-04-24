@@ -53,4 +53,4 @@ def bisection(fx,a,b,iteration,stoppingcondition):
 # print(f"The root is = {bisection(fx_example,1,2,7,None)}")
 
 # question 2
-# print(f"The root is = {bisection(fx_q2,1,2,None,stoppingcondition=0.01)}")
+print(f"The root is = {bisection(fx_q2,1,2,None,stoppingcondition=0.01)}")
