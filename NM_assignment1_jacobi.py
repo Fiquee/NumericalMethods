@@ -31,17 +31,17 @@ def jacobi(matrix,iteration,b, x=None):
 
 
 
-A = np.array([ [3,12,0,-1,0,0], [4,0,31,1,0,0] , [2,1,0,0,17,-3], [27,2,0,0,0,1], [0,0,0,-1,1,11], [0,0,0,24,-1,0] ])
-b = np.array([39,117,12,98,14,55])
+A = np.array([[5,1,2],[1,4,1],[2,2,5]])
+b = np.array([1,2,3])
 
 
 
-A, b = make_diagonal_dominant(A,b)
+# A, b = make_diagonal_dominant(A,b)
 print(A)
 # print(A)
 # print("\n",b)
 
-jacobi(A,10,b)
+jacobi(A,3,b,[1,1,1])
 
 
 

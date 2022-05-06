@@ -1,7 +1,7 @@
 import math
 
 def fx_example(x):
-    return x**2-2
+    return x**2-4
 
 def fx_q4(x):
     return x**4-5
@@ -22,7 +22,7 @@ def secant(fx,a,b,iteration):
     return x_curr
 
 # test for question 3
-# print(f"The root is = {secant(fx_example,1,1.5,4)}")
+print(f"The root is = {secant(fx_example,3,4,3)}")
 
 # question 4
 # print(f"The root is = {secant(fx_q4,1,2,10)}")

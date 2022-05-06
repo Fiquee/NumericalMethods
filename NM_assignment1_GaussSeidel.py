@@ -13,6 +13,8 @@ def GaussSeidel(matrix,b,iteration,x=None):
     if x is None:
         x = np.zeros(len(matrix[0]))
 
+    print(x)
+
     for iterations in range(iteration):
         for i in range(len(matrix[0])):
             d = b[i]
@@ -27,6 +29,7 @@ def GaussSeidel(matrix,b,iteration,x=None):
 def GaussSeidel_v(matrix,b,iteration,x=None): #Using vector style
     if x is None:
         x = np.zeros(len(matrix[0]))
+    print(x)
 
     D = np.diag(matrix)
     R = matrix - np.diagflat(D)
@@ -42,8 +45,8 @@ def GaussSeidel_v(matrix,b,iteration,x=None): #Using vector style
 
 
 
-A = np.array([[5,-2,-1,1],[-2,4,1,0],[1,2,6,-1],[-1,0,1,6]])
-b = np.array([6,0,6,-14])
+A = np.array([[5,1,2],[1,4,1],[2,2,5]])
+b = np.array([1,2,3])
 
 # A = np.array([[1,-5], [7,-1]])
 # b = np.array([-4,6])
@@ -52,7 +55,7 @@ b = np.array([6,0,6,-14])
 A,b = make_diagonal_dominant(A,b)
 print(A)
 
-GaussSeidel(A,b,10)
+# GaussSeidel(A,b,10)
 print()
 print()
-GaussSeidel_v(A,b,10)
+GaussSeidel_v(A,b,3,[1,1,1])
